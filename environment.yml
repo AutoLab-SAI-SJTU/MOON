@@ -1,0 +1,24 @@
+# Python environment of the release; habitat-sim / habitat-lab 0.2.4 and flash-attn are added on top
+# (README.md, Installation).
+name: moon
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu126
+      - torch==2.7.0
+      - torchvision==0.22.0
+      - transformers==5.15.0
+      - peft==0.20.0
+      - accelerate==1.14.0
+      - safetensors==0.8.0
+      - qwen-vl-utils==0.0.14
+      - numpy==1.26.4
+      - numpy-quaternion==2024.0.8
+      - scipy==1.15.3
+      - pillow==11.3.0
+      - opencv-python==4.11.0.86
+      - pytest==9.1.1
+      - pyyaml==6.0.3

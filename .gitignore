@@ -1,0 +1,32 @@
+# data and run outputs
+data/*
+!data/README.md
+!data/.gitkeep
+outputs/
+*.log
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+
+# Local models and credentials
+checkpoints/
+models/
+external/
+.env
+.env.local
+*.safetensors
+*.bin
+*.pt
+*.pth

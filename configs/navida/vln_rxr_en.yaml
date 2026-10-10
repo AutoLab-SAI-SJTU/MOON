@@ -1,0 +1,71 @@
+# @package _global_
+#
+# RxR val_unseen, English episodes only, for closed-loop evaluation.
+#
+# val_unseen_en/val_unseen_en_guide.json.gz is the 3669-episode English subset of the
+# 11006-episode val_unseen_guide.json.gz, written by scripts/build_rxr_en_split.py.
+# turn_angle stays 15 to match the released policy.
+
+defaults:
+  - /habitat: habitat_config_base
+  - /habitat/task: vln_r2r
+  - /habitat/simulator/agents@habitat.simulator.agents.main_agent: rgbd_agent
+  - /habitat/dataset: rxrvlnce_v1
+  - /habitat/task/lab_sensors:
+    - gps_sensor
+    - compass_sensor
+  - /habitat/task/measurements/oracle_success@habitat.task.measurements.oracle_success
+  - /habitat/task/measurements/ndtw@habitat.task.measurements.ndtw
+  - _self_
+
+habitat:
+  environment:
+    max_episode_steps: 500
+    iterator_options:
+      max_scene_repeat_steps: 50000
+      shuffle: False
+  simulator:
+    agents:
+      main_agent:
+        sim_sensors:
+          rgb_sensor:
+            width: 640
+            height: 480
+            hfov: 90
+    forward_step_size: 0.25
+    turn_angle: 15
+    habitat_sim_v0:
+      gpu_device_id: 0
+  task:
+    measurements:
+      path_length:
+        type: PathLength
+      distance_to_goal:
+        type: DistanceToGoal
+        distance_to: POINT
+      success:
+        type: Success
+        success_distance: 3.0
+      spl:
+        type: SPL
+      oracle_success:
+        type: OracleSuccess
+        success_distance: 3.0
+      oracle_navigation_error:
+        type: OracleNavigationError
+      ndtw:
+        type: NDTW
+        success_distance: 3.0
+        gt_path: data/datasets/rxr/{split}/{split}_{role}_gt.json.gz
+
+  dataset:
+    type: RxRVLNCE-v1
+    split: val_unseen
+    roles: [guide]
+    # No language filter: the loader matches against a `language` field that this
+    # VLN-CE export does not carry, so asking for en-US/en-IN drops every episode.
+    # The file is already English-only.
+    languages: ["*"]
+    scenes_dir: data/scene_dataset/
+    data_path: data/datasets/rxr/{split}_en/{split}_en_{role}.json.gz
+

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moon"
+version = "0.2.0"
+description = "MOON: a deviation judge, clear-and-hand-off restarts and a GRPO-trained recovery policy around a frozen vision-language navigation policy"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+# habitat-sim and habitat-lab 0.2.4 are installed separately (README.md)
+dependencies = [
+    "torch>=2.7",
+    "transformers>=5.15",
+    "peft>=0.20",
+    "accelerate>=1.14",
+    "safetensors",
+    "qwen-vl-utils",
+    "numpy>=1.25,<2",
+    "numpy-quaternion",
+    "scipy",
+    "pillow",
+    "opencv-python",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "build", "PyYAML"]
+
+[tool.setuptools.packages.find]
+include = ["moon*"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

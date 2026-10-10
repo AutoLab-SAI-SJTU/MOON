@@ -1,0 +1,7 @@
+include README.md LICENSE environment.yml
+recursive-include docs *.md
+recursive-include assets *.png *.svg
+recursive-include configs *.yaml
+recursive-include scripts *.py *.sh *.env
+recursive-include tests *.py
+global-exclude __pycache__ *.py[cod] *.safetensors *.bin *.pt *.pth

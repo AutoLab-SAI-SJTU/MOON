@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="149" height="20" viewBox="0 0 149 20" role="img" aria-label="ModelScope: Weights">
+  <title>ModelScope: Weights</title>
+  <linearGradient id="shade" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-opacity=".08"/></linearGradient>
+  <clipPath id="rounded"><rect width="149" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#rounded)"><rect width="92" height="20" fill="#555"/><rect x="92" width="57" height="20" fill="#624af7"/><rect width="149" height="20" fill="url(#shade)"/></g>
+  <g transform="translate(5 2)" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 1 6 3.5v7L8 15l-6-3.5v-7zM2 4.5 8 8l6-3.5M8 8v7"/></g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11">
+    <text x="55.5" y="14">ModelScope</text><text x="120.5" y="14">Weights</text>
+  </g>
+</svg>
