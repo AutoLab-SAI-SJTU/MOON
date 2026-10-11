@@ -76,3 +76,14 @@ The caller supplies checkpoint paths, `environment_step`, the initial RGB and `d
 `drift_threshold` overrides the dataset/alpha default when using a separately calibrated judge.
 
 Clearing preserves the current frame and original instruction; visual history then re-accumulates. The driver's recent-action record is retained. In default one-recovery mode the judge stops after handover.
+
+## CPU tests
+
+The model-free tests cover the control loop, adapter switching, evaluation launchers and result aggregation:
+
+```bash
+python -m pip install -e '.[test]'
+python -m pytest tests -q
+```
+
+GitHub Actions runs these tests and builds the package. The tests do not require model weights, simulator scenes or a GPU.
