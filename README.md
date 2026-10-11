@@ -7,8 +7,8 @@
 <p>
   <a href="#citation"><img src="assets/badges/paper.svg" alt="arXiv: Coming Soon"></a>
   <a href="https://github.com/AutoLab-SAI-SJTU/MOON"><img src="assets/badges/code.svg" alt="GitHub: Inference Code"></a>
-  <a href="https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights"><img src="assets/badges/weights.svg" alt="ModelScope weights (private)"></a>
-  <a href="https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data"><img src="assets/badges/data.svg" alt="ModelScope data (private)"></a>
+  <a href="https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights"><img src="assets/badges/weights.svg" alt="ModelScope weights"></a>
+  <a href="https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data"><img src="assets/badges/data.svg" alt="ModelScope data"></a>
   <a href="#training"><img src="assets/badges/training.svg" alt="Training: Coming Soon"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="License: Apache-2.0"></a>
 </p>
@@ -35,7 +35,7 @@
 
 The two modules add **36.0M parameters (0.81% of the base)** and improve the base policy's success rate by **5.2 points on R2R-CE** and **6.0 points on English RxR-CE**. The same adapters transfer to open-vocabulary object navigation without object-goal retraining.
 
-This repository provides inference and evaluation. Model weights and the experiment archive are hosted on ModelScope and currently require private access.
+This repository provides inference and evaluation. Model weights and experiment data are available on ModelScope.
 
 <a id="method"></a>
 
@@ -110,7 +110,7 @@ MOON uses NaVIDA's Habitat configuration, benchmark extensions, and data layout.
 
 ## 📦 Models and Data
 
-Download the base policy and both adapters from [ModelScope weights](https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights). **The weights repository is private; use an account with access.**
+Download the base policy and both adapters from [ModelScope weights](https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights).
 
 | Checkpoint | Directory in the weights repository | Path variable |
 |---|---|---|
@@ -123,16 +123,13 @@ The base is a trained Qwen3-VL-4B-Instruct navigation policy. Use it with the ma
 <details>
 <summary><b>Download the three checkpoints with the ModelScope SDK</b></summary>
 
-Get an SDK token from your authorized [ModelScope account](https://modelscope.cn/my/myaccesstoken). The command below prompts for it without displaying it and downloads the checkpoints to `checkpoints/moon/`.
+Download the checkpoints to `checkpoints/moon/`:
 
 ```bash
 python -m pip install modelscope
 python - <<'PY'
-from getpass import getpass
 from modelscope import snapshot_download
-from modelscope.hub.api import HubApi
 
-HubApi().login(getpass("ModelScope SDK token: "))
 snapshot_download(
     "jmzhou/moon-iclr2027-weights",
     local_dir="checkpoints/moon",
@@ -147,7 +144,7 @@ PY
 
 </details>
 
-Prepare Matterport3D scenes and R2R-CE / RxR-CE validation episodes following the [data guide](data/README.md). The private [ModelScope data archive](https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data) also stores environments and experiment records; the full archive is not needed for inference.
+Prepare Matterport3D scenes and R2R-CE / RxR-CE validation episodes following the [data guide](data/README.md). The [ModelScope data repository](https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data) also contains environments and experiment records; the full archive is not needed for inference.
 
 <a id="quick-start"></a>
 

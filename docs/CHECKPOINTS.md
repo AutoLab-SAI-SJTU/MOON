@@ -2,10 +2,10 @@
 
 ## Project resources
 
-| Resource | Location | Access |
-|---|---|---|
-| Base policy, judge and recovery checkpoints | [ModelScope weights](https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights) | Private; access required |
-| Data and experiment archive | [ModelScope data](https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data) | Private maintainer archive |
+| Resource | Location |
+|---|---|
+| Base policy, judge and recovery checkpoints | [ModelScope weights](https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights) |
+| Data and experiment files | [ModelScope data](https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data) |
 
 The public inference release requires matching local model files and the original benchmark inputs. Complete backup archives are not required to run inference.
 
