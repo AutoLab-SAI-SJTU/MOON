@@ -5,7 +5,7 @@
 **Learning When to Forget and How to Move On<br>in Vision-and-Language Navigation**
 
 <p>
-  <a href="#citation"><img src="assets/badges/paper.svg" alt="arXiv: Coming Soon"></a>
+  <a href="https://arxiv.org/abs/2610.33546"><img src="assets/badges/paper.svg" alt="arXiv: 2610.33546"></a>
   <a href="https://github.com/AutoLab-SAI-SJTU/MOON"><img src="assets/badges/code.svg" alt="GitHub: Inference Code"></a>
   <a href="https://www.modelscope.cn/models/jmzhou/moon-iclr2027-weights"><img src="assets/badges/weights.svg" alt="ModelScope weights"></a>
   <a href="https://www.modelscope.cn/datasets/jmzhou/moon-iclr2027-data"><img src="assets/badges/data.svg" alt="ModelScope data"></a>
@@ -21,6 +21,7 @@
 
 ## 🔥 News
 
+- **[2026.10.24]** Our paper is now available on [arXiv](https://arxiv.org/abs/2610.33546).
 - **[2026.10.10]** Inference and evaluation code is available for R2R-CE and English RxR-CE.
 
 ## 📋 Contents
@@ -86,7 +87,7 @@ Inference and benchmark evaluation use **Linux, Python 3.10, an NVIDIA GPU, PyTo
 ### 1. Install MOON
 
 ```bash
-git clone https://github.com/AutoLab-SAI-SJTU/MOON.git
+git clone [https://github.com/AutoLab-SAI-SJTU/MOON.git](https://github.com/AutoLab-SAI-SJTU/MOON.git)
 cd MOON
 conda env create -f environment.yml
 conda activate moon
@@ -98,10 +99,10 @@ python -m pip install flash-attn==2.7.4.post1 --no-build-isolation
 
 ```bash
 conda install -c conda-forge -c aihabitat habitat-sim=0.2.4 withbullet headless
-git clone --branch v0.2.4 https://github.com/facebookresearch/habitat-lab.git external/habitat-lab
+git clone --branch v0.2.4 [https://github.com/facebookresearch/habitat-lab.git](https://github.com/facebookresearch/habitat-lab.git) external/habitat-lab
 python -m pip install -e external/habitat-lab/habitat-lab -e external/habitat-lab/habitat-baselines
 python -m pip install dtw fastdtw
-git clone https://github.com/waynechu1021/NAVIDA.git external/NAVIDA
+git clone [https://github.com/waynechu1021/NAVIDA.git](https://github.com/waynechu1021/NAVIDA.git) external/NAVIDA
 ```
 
 MOON uses NaVIDA's Habitat configuration, benchmark extensions, and data layout. See the [installation guide](docs/INSTALL.md) for environment checks and troubleshooting.
@@ -270,6 +271,7 @@ If you find MOON useful for your research, please consider citing our paper:
       primaryClass={cs.RO},
       url={[https://arxiv.org/abs/2610.33546](https://arxiv.org/abs/2610.33546)}, 
 }
+```
 
 <a id="acknowledgements"></a>
 
