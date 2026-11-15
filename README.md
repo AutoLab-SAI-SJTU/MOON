@@ -258,7 +258,18 @@ Coming soon after acceptance.
 
 ## 📚 Citation
 
-The paper link and BibTeX entry will be added with the paper release.
+If you find MOON useful for your research, please consider citing our paper:
+
+```bibtex
+@misc{zhou2026moonlearningforgetmove,
+      title={MOON: Learning When to Forget and How to Move On in Vision-and-Language Navigation}, 
+      author={Jingmeng Zhou and Seson Sun and Binyao Xu and Lingming Zhang and Hanshi Wang and Fudong Ge and Weiming Hu and Jin Gao and Zhipeng Zhang},
+      year={2026},
+      eprint={2610.33546},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={[https://arxiv.org/abs/2610.33546](https://arxiv.org/abs/2610.33546)}, 
+}
 
 <a id="acknowledgements"></a>
 
